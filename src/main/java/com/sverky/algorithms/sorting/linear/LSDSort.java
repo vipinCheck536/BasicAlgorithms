@@ -15,23 +15,24 @@ import com.sverky.algorithms.base.ISort;
  *
  */
 public class LSDSort implements ISort {
-	
-	
+
 	public List<String> sort(List<String> inputSeries) {
 
 		int maxLength = getMaxLength(inputSeries);
-
+		
+		List<String> sortingArray = inputSeries;
+		
 		if (maxLength != 0) {
-
-			for (int indexDigit = maxLength - 1; indexDigit >= 0; indexDigit++) {
-
-				inputSeries = indexCountingStep(inputSeries, indexDigit);
-
+		
+			for (int indexDigit = maxLength - 1; indexDigit > -1; indexDigit++) {
+			
+				sortingArray = indexCountingStep(sortingArray, indexDigit);
+			
 			}
 
 		}
 
-		return inputSeries;
+		return sortingArray;
 	}
 
 	private List<String> indexCountingStep(List<String> inputSeries,
@@ -78,7 +79,10 @@ public class LSDSort implements ISort {
 	}
 
 	private int getMaxLength(List<String> inputSeries) {
+		
 		int maxLength = 0;
+		if(inputSeries == null ) return 0;
+		
 		for (String input : inputSeries)
 			maxLength = input == null ? 0 : Math.max(input.length(), maxLength);
 
@@ -96,7 +100,7 @@ public class LSDSort implements ISort {
 	private List<String> getCopyAtAuxPositionByIndex(int[] auxPositions,
 			List<String> inputSeries, int keyIndex) {
 
-		String[] auxPositionMap = new String[inputSeries.size()];
+		String[] auxPositionMap = new String[inputSeries.size()+1];
 
 		for (int index = 0; index < inputSeries.size(); index++) {
 
@@ -116,7 +120,7 @@ public class LSDSort implements ISort {
 
 		inputSeries = new ArrayList<String>();
 
-		for (int index = 0; index < auxPositionMap.length; index++) {
+		for (int index = 0; index < inputSeries.size(); index++) {
 
 			inputSeries.add(auxPositionMap[index]);
 
@@ -126,5 +130,4 @@ public class LSDSort implements ISort {
 
 	}
 
-	
 }
