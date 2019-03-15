@@ -24,7 +24,7 @@ public class LSDSort implements ISort {
 		
 		if (maxLength != 0) {
 		
-			for (int indexDigit = maxLength - 1; indexDigit > -1; indexDigit++) {
+			for (int indexDigit = maxLength - 1; indexDigit > -1; indexDigit--) {
 			
 				sortingArray = indexCountingStep(sortingArray, indexDigit);
 			
@@ -101,6 +101,8 @@ public class LSDSort implements ISort {
 			List<String> inputSeries, int keyIndex) {
 
 		String[] auxPositionMap = new String[inputSeries.size()+1];
+		
+		int size = inputSeries.size();
 
 		for (int index = 0; index < inputSeries.size(); index++) {
 
@@ -120,7 +122,7 @@ public class LSDSort implements ISort {
 
 		inputSeries = new ArrayList<String>();
 
-		for (int index = 0; index < inputSeries.size(); index++) {
+		for (int index = 0; index < size; index++) {
 
 			inputSeries.add(auxPositionMap[index]);
 

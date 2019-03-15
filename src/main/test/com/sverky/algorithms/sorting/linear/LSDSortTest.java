@@ -37,7 +37,7 @@ public class LSDSortTest  {
 	 @Test
 	 public void sortLargeElementTest() {
 		 
-		 sortTestHelper(10000,1000);
+		 sortTestHelper(10,10);
 		 
 	 }	
 	 
