@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.sverky.algorithms.sorting.linear;
 
 import java.util.ArrayList;
@@ -11,15 +8,9 @@ import org.junit.Test;
 
 import com.sverky.algorithms.sort.helpers.SortHelper;
 
-
-/**
- * @author ssiripurapu
- *
- */
-
-public class LSDSortTest  {
-		
-	 @Test
+public class MSDSortTechnique {
+	
+	@Test
 	 public void sortPrimaryTest() {
 		 
 		 sortTestHelper(5,5);
@@ -37,23 +28,12 @@ public class LSDSortTest  {
 	 @Test
 	 public void sortLargeElementTest() {
 		 
-		 sortTestHelper(10,10);
+		 sortTestHelper(10000,1000);
 		 
 	 }	
 	 
 	 @Test
-	 public void sortNullTest() {
-		 
-		 LSDSort sortingTechnique = new LSDSort();
-		 
-		 List<String> generatedStrings = sortingTechnique.sort(null);
-		 
-		 Assert.assertNull(generatedStrings);
-		 
-	 }	
-
-	 @Test
-     public void sortLSD() {
+     public void sortMSD() {
 		 
 		 SortHelper sortHelper = new SortHelper();
 		 
@@ -66,7 +46,7 @@ public class LSDSortTest  {
 		
 		 List<String> copy = new ArrayList<String>(strings);
 		 
-		 LSDSort sortingTechnique = new LSDSort();
+		 MSDSort sortingTechnique = new MSDSort();
 		 
 		 strings = sortingTechnique.sort(strings);
 		 
@@ -77,6 +57,19 @@ public class LSDSortTest  {
 	 }
 	 
 	 
+	 
+	 @Test
+	 public void sortNullTest() {
+		 
+		 MSDSort sortingTechnique = new MSDSort();
+		 
+		 List<String> generatedStrings = sortingTechnique.sort(null);
+		 
+		 Assert.assertNull(generatedStrings);
+		 
+	 }	
+
+	 
 	 public void sortTestHelper(int maxSize,int numberOfElements) {
 		 
 		 SortHelper sortHelper = new SortHelper();
@@ -85,7 +78,7 @@ public class LSDSortTest  {
 		
 		 List<String> copy = new ArrayList<String>(generatedStrings);
 		 
-		 LSDSort sortingTechnique = new LSDSort();
+		 MSDSort sortingTechnique = new MSDSort();
 		 
 		 generatedStrings = sortingTechnique.sort(generatedStrings);
 		 
@@ -94,6 +87,5 @@ public class LSDSortTest  {
 		 Assert.assertEquals(sortHelper.validateStringSorts(copy, generatedStrings), true);
 		 
 	 }
-	
-	
+
 }

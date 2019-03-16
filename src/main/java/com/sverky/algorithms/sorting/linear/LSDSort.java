@@ -123,7 +123,7 @@ public class LSDSort implements ISort {
 		inputSeries = new ArrayList<String>();
 
 		for (int index = 0; index < size; index++) {
-
+            if(auxPositionMap[index]!=null)
 			inputSeries.add(auxPositionMap[index]);
 
 		}

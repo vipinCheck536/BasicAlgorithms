@@ -17,56 +17,32 @@ import com.sverky.algorithms.sort.helpers.SortHelper;
  *
  */
 
-public class LSDSortTest  {
+public class QuickSortTest  {
 		
-	 @Test
-	 public void sortPrimaryTest() {
-		 
-		 sortTestHelper(5,5);
-	 
-	 }	
-	 
-	 
-	 @Test
-	 public void sortOneElementTest() {
-		 
-		 sortTestHelper(1,1);
-		 
-	 }		 
+//	 @Test
+//	 public void sortOneElementTest() {
+//		 
+//		 sortTestHelper(1,1);
+//		 
+//	 }		 
 	 
 	 @Test
-	 public void sortLargeElementTest() {
-		 
-		 sortTestHelper(10,10);
-		 
-	 }	
-	 
-	 @Test
-	 public void sortNullTest() {
-		 
-		 LSDSort sortingTechnique = new LSDSort();
-		 
-		 List<String> generatedStrings = sortingTechnique.sort(null);
-		 
-		 Assert.assertNull(generatedStrings);
-		 
-	 }	
-
-	 @Test
-     public void sortLSD() {
+     public void sortQuickSort() {
 		 
 		 SortHelper sortHelper = new SortHelper();
 		 
 		 List<String> strings = new ArrayList<String>();
 		 
-		 strings.add("abc");
-		 strings.add("bbc");
-		 strings.add("aba");
-		 strings.add("bad");
+		 strings.add("5");
+		 strings.add("1");
+		 strings.add("2");
+		 strings.add("4");
+		 strings.add("3");
+		
 		
 		 List<String> copy = new ArrayList<String>(strings);
 		 
-		 LSDSort sortingTechnique = new LSDSort();
+		 QuickSort sortingTechnique = new QuickSort();
 		 
 		 strings = sortingTechnique.sort(strings);
 		 
@@ -85,7 +61,7 @@ public class LSDSortTest  {
 		
 		 List<String> copy = new ArrayList<String>(generatedStrings);
 		 
-		 LSDSort sortingTechnique = new LSDSort();
+		 QuickSort sortingTechnique = new QuickSort();
 		 
 		 generatedStrings = sortingTechnique.sort(generatedStrings);
 		 
